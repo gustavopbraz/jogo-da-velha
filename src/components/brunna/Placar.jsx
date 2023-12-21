@@ -37,7 +37,7 @@ function Placar() {
                     </div>
                 </div>
                 {/* a div meuBotaoReiniciar existe só para que eu possa posicionar o botão botaoReiniciar no centro */}
-                <div className="meuBotaoReiniciar">
+                <div className="containerBotaoReiniciar">
                     <button className="botaoReiniciar" onClick={(e) => reiniciarPlacar(e)}>Reiniciar</button>
                 </div>
             </div>
