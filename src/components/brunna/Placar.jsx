@@ -14,28 +14,33 @@ function Placar() {
 
     return (
         <>
-            <div>
-                {/* pontuação do time O mudará conforme a mudança do input */}
-                <div>
-                    <p>Time O</p>
-                    <p>{placarTimeO}</p>
-                    <input
-                    type="number"
-                    onChange={(e) => setPlacarTimeO(e.target.value)}
+            <div className="placarEReiniciar">
+                <div className="placar">
+                    {/* pontuação do time O mudará conforme a mudança do input */}
+                    <div className="time">
+                        <p>Time O</p>
+                        <p>{placarTimeO}</p>
+                        <input
+                        type="number"
+                        onChange={(e) => setPlacarTimeO(e.target.value)}
 
-                    />
+                        />
+                    </div>
+                    {/* pontuação do time O mudará conforme a mudança do input */}
+                    <div className="time">
+                        <p>Time X</p>
+                        <p>{placarTimeX}</p>
+                        <input
+                        type="number"
+                        onChange={(e) => setPlacarTimeX(e.target.value)}
+                        />
+                    </div>
                 </div>
-                {/* pontuação do time O mudará conforme a mudança do input */}
-                <div>
-                    <p>Time X</p>
-                    <p>{placarTimeX}</p>
-                    <input
-                    type="number"
-                    onChange={(e) => setPlacarTimeX(e.target.value)}
-                    />
+                {/* a div meuBotaoReiniciar existe só para que eu possa posicionar o botão botaoReiniciar no centro */}
+                <div className="meuBotaoReiniciar">
+                    <button className="botaoReiniciar" onClick={(e) => reiniciarPlacar(e)}>Reiniciar</button>
                 </div>
             </div>
-            <button onClick={(e) => reiniciarPlacar(e)}>Reiniciar</button>
         </>
     )
   }
