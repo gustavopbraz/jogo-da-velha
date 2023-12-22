@@ -1,0 +1,39 @@
+.placar {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+}
+
+.botaoReiniciar {
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.time {
+    background-color: blue;
+    margin: 50px;
+    text-align: center;
+
+}
+
+.placarEReiniciar {
+    background-color: blueviolet;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+}
+
+p {
+    color: white;
+}
+
+.containerBotaoReiniciar {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
