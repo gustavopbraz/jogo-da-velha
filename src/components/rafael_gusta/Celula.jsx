@@ -15,6 +15,20 @@ const StyledCelula = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover{
+        transform: translateY(-3px);
+        background-color: #0C2D2A;
+    }
+`;
+
+const StyledCelulaInactive = styled(StyledCelula)`
+    cursor: default;
+    &:hover{
+        transform: translateY(0px);
+        background-color: #10403B;
+    }
 `;
 
 function Celula({setMatriz, player, i, j}) {
@@ -24,10 +38,12 @@ function Celula({setMatriz, player, i, j}) {
         matriz[i][j] = player ? 'X' : 'O';
         setMatriz(matriz);
     }
-
+    const active = matriz[i][j] === '' ? true : false;
 
     return(
-        <StyledCelula onClick={updateMatriz}>{matriz[i][j]}</StyledCelula>
+        active
+            ? <StyledCelula onClick={updateMatriz}></StyledCelula>
+            : <StyledCelulaInactive>{matriz[i][j]}</StyledCelulaInactive>
     );
 }
 
