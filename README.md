@@ -2,6 +2,16 @@
 
 Repositório dedicado à implementação de um Jogo da Velha, desafio parte do Processo Trainee da Orc'estra de 2023.2.
 
+## Rodando o projeto na sua máquina
+Antes de rodar o projeto na sua máquina, é preciso que você já tenha instalado o Node.
+
+Tendo isso em mente, após instalar o Node, abra o terminal e digite os seguintes comandos:
+```console
+npm i
+npm run dev
+```
+O vite fornecerá o localhost no qual você poderá acessar o projeto.
+
 ## Requisitos do Projeto
 
 ### Requisitos Não-Funcionais
