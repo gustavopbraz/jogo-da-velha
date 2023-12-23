@@ -7,7 +7,7 @@ function App() {
     
     <BrowserRouter>
       <Routes>
-        <Route path="/game" element={<Game />} />
+        <Route path="/" element={<Game />} />
         {/*
           COLOCAR ROTA DA PAGINA INICAL
           

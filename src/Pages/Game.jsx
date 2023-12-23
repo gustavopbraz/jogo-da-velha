@@ -11,6 +11,7 @@ import './Game.css'
 import { useNavigate } from 'react-router-dom';
 
 function Game() {
+  
   const navigate = useNavigate();
   const [matriz, setMatriz] = useState([['','',''],['','',''],['','','']]);
   localStorage.setItem('matriz@game', JSON.stringify(matriz));
@@ -100,7 +101,7 @@ function Game() {
   return (
     <div>
       <StyledMain>
-        <BackButton label="back" handler={backToMenu} color={"#10403B"} />
+      
         <StyledTitle>Tic Tac Toe</StyledTitle>
         <div className='containerGamePlacar'>
           <Placar time='O' pontuacao={countO}/>
