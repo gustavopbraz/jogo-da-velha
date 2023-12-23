@@ -2,8 +2,8 @@ import { React } from 'react';
 import { styled } from 'styled-components';
 
 const StyledCelula = styled.div`
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     background-color: #10403B;
     cursor:pointer;
     margin-top:20px;

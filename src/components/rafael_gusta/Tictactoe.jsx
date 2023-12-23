@@ -4,9 +4,10 @@ import { styled } from 'styled-components'
 import Celula from './Celula'
 
 const StyledGrid = styled.div`
+    height: 380px;
     display: grid;
-    grid-template-rows: repeat(3, 190px);
-    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 140px);
+    grid-template-columns: repeat(3, 100px);
     grid-gap: 20px;
 `;
 

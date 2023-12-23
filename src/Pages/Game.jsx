@@ -7,6 +7,8 @@ import StyledTitle from '../components/rafael_gusta/StyledTitle'
 import CardWinner from '../components/rafael_gusta/CardWinner'
 import CardEmpate from '../components/rafael_gusta/CardEmpate'
 import BackButton from '../components/rafael_gusta/BackButton'
+import Points from '../components/rafael_gusta/Points'
+import CenterSection from '../components/rafael_gusta/CenterSection'
 
 import { useNavigate } from 'react-router-dom';
 
@@ -18,6 +20,8 @@ function Game() {
   const [empate, setEmpate] = useState(false);
   const [quantidadeJogadas, setQuantidadeJogadas] = useState(0);
   const [winner, setWinner] = useState('');
+  const [pointsX, setPointsX] = useState(0);
+  const [pointsO, setPointsO] = useState(0);
 
   const checkWinner = () => {
     const player = currentPlayer ? 'X' : 'O';
@@ -42,6 +46,13 @@ function Game() {
     }
   }
 
+  const playAgain = () => {
+    setMatriz([['','',''],['','',''],['','','']]);
+    setQuantidadeJogadas(0);
+    setEmpate(false);
+    setCurrentPlayer(winner === 'X' ? true : false);
+  }
+
   const backToMenu = () => {
     localStorage.removeItem('matriz@game');
     return navigate('/');
@@ -50,6 +61,10 @@ function Game() {
   const resetGame = () => {
     setMatriz([['','',''],['','',''],['','','']]);
     setQuantidadeJogadas(0);
+    if(winner === ''){
+      setPointsO(0);
+      setPointsX(0);
+    }
     setWinner('');
     setCurrentPlayer(false);
     setEmpate(false);
@@ -58,13 +73,11 @@ function Game() {
   useEffect(() => {
     setQuantidadeJogadas(quantidadeJogadas + 1);
     if(checkWinner()){
-      /*
-      (so entra nesta condicao quando alguem ganha)
-      ///////////////////////////
-      //  FUNCAO DE VITORIA    //
-      // ATUALIZAR PLACAR AQUI //
-      ///////////////////////////
-      */
+      if(currentPlayer){
+        setPointsX(pointsX + 1);
+      }else{
+        setPointsO(pointsO + 1);
+      }
       setWinner(currentPlayer ? 'X' : 'O');
     }
     else if(quantidadeJogadas === 9){
@@ -82,9 +95,13 @@ function Game() {
       <StyledMain>
         <BackButton label="back" handler={backToMenu} color={"#10403B"} />
         <StyledTitle>Tic Tac Toe</StyledTitle>
-        <Tictactoe matriz={matriz} setMatriz={setMatriz} player={currentPlayer}/>
+        <CenterSection>
+          <Points nickname="X" points={pointsX} />
+          <Tictactoe matriz={matriz} setMatriz={setMatriz} player={currentPlayer}/>
+          <Points nickname="O" points={pointsO} />
+        </CenterSection>
         <Button label="reset" handler={resetGame} color={"#10403B"}/>
-        {empate && <CardEmpate backFunc={backToMenu} playAgainFunc={resetGame}/>}
+        {empate && <CardEmpate backFunc={backToMenu} playAgainFunc={playAgain}/>}
         {winner && <CardWinner winner={winner} backFunc={backToMenu} playAgainFunc={resetGame}/> /*arrumar funcoes de back e play again*/}
       </StyledMain>
     </div>
