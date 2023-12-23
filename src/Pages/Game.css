@@ -1,0 +1,21 @@
+.containerGamePlacar {
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.containerButton {
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.myButton {
+    margin-top: 0;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+}
