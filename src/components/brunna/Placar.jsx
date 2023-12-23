@@ -24,7 +24,7 @@ function Placar() {
                         type="number"
                         onChange={(e) => setPlacarTimeO(e.target.value)}
 
-                        />
+                        /> 
                     </div>
                     {/* pontuação do time O mudará conforme a mudança do input */}
                     <div className="time">
